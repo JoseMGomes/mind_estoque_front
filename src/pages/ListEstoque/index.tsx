@@ -6,6 +6,9 @@ import { ItemProps } from "../../types/ItemEstoque";
 import { FlatList } from "react-native";
 import Title from "../../components/Title";
 import ButtonBackPage from "../../components/ButtonBackPage";
+import { useNavigation } from "@react-navigation/native";
+import { StackTypes } from "../../routes/Stack";
+import Header from "../../components/Header";
 
 
 interface ItemFlatList {
@@ -57,17 +60,18 @@ interface ItemFlatList {
       entrada: true
     },
   ];
+
+  const navigation = useNavigation<StackTypes>();
+
   return (
     <Container>
-      <Title title="Listagem de estoque" style={{marginBottom: 20}}/>
-     
+      <Header title="Listagem de estoque" />
       <FlatList
         style={{ width: "90%", height: 500, marginTop: 50}}
         data={data}
         renderItem={(item: ItemFlatList) => <Card item={item.item} />}
         keyExtractor={(item: ItemProps) => item.name}
       />
-      <ButtonBackPage style={{marginTop: 50}}/>
     </Container>
   );
 };

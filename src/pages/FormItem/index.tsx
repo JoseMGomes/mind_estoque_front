@@ -7,7 +7,6 @@ import {
   NewButton,
   Picker,
   Select,
-
 } from "./styles"; // Importe o componente View
 import Button from "../../components/Button";
 import Input from "../../components/Input";
@@ -22,7 +21,9 @@ import DropDownPicker from "react-native-dropdown-picker";
 import styles from "../../styles";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import ButtonBackPage from "../../components/ButtonBackPage";
-
+import { useNavigation } from "@react-navigation/native";
+import { StackTypes } from "../../routes/Stack";
+import Header from "../../components/Header";
 
 const FormItem: React.FC = () => {
   const formRef: any = useRef(null);
@@ -31,6 +32,7 @@ const FormItem: React.FC = () => {
   const [money, setMoney] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [currentValue, setCurrentValue] = useState(true);
+  const navigation = useNavigation<StackTypes>();
 
   function handleSubmit(data: RegisterUser) {
     console.log(data);
@@ -44,8 +46,6 @@ const FormItem: React.FC = () => {
       return err;
     }
   };
-
-
 
   const itens = [
     {
@@ -61,8 +61,7 @@ const FormItem: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Title title="Estoque" />
-        <ButtonBackPage/>
+        <Header title="Estoque" />
         <ScrollView>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Label>Imagem:</Label>
@@ -103,7 +102,7 @@ const FormItem: React.FC = () => {
               <Button
                 style={{
                   flex: 1,
-                  
+
                   backgroundColor: styles.colors.button_enter,
                 }}
                 onPress={() => formRef.current?.submitForm()}
@@ -112,7 +111,7 @@ const FormItem: React.FC = () => {
               <NewButton
                 style={{
                   flex: 1,
-                  
+
                   backgroundColor: styles.colors.button_exit,
                 }}
                 onPress={() => formRef.current?.submitForm()}

@@ -5,9 +5,12 @@ import Input from "../../components/Input";
 import { LoginUser } from "../../types/LoginUser";
 import Button from "../../components/Button";
 import Title from "../../components/Title";
+import { useNavigation } from "@react-navigation/native";
+import { StackTypes } from "../../routes/Stack";
 
 const Login: React.FC = () => {
   const formRef: any = useRef(null);
+  const navigation = useNavigation<StackTypes>()
   function handleSubmit(data: LoginUser) {
     console.log(data);
     // { email: 'test@example.com', password: '123456' }
@@ -23,7 +26,7 @@ const Login: React.FC = () => {
           <Input name="email" placeholder="Digite seu email:" />
           <Label>Senha:</Label>
           <Input name="password" placeholder="Digite sua senha:" secureTextEntry />
-          <Button title="Entrar"/>
+          <Button title="Entrar" onPress={() => navigation.navigate("Home")}/>
         </Form>
       </Content>
     </Container>

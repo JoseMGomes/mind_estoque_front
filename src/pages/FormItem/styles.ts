@@ -9,12 +9,13 @@ export const Container = styled.View`
   background-color: ${styles.colors.background};
   align-items: center;
   justify-content: center;
+  padding-bottom: 30px;
 `;
+
 
 export const Content = styled.View`
   width: 80%;
-    margin-top: 50px;
-
+  margin-top: 50px;
 `;
 
 export const Image = styled.Image`
@@ -44,5 +45,5 @@ export const Choose = styled.View`
 `;
 
 export const NewButton = styled(Button)`
-    margin-top: 10px;
+  margin-top: 10px;
 `;

@@ -7,19 +7,24 @@ import { Form } from '@unform/mobile';
 import Title from '../../components/Title';
 import { RegisterUser } from '../../types/RegisterUser';
 import ButtonBackPage from '../../components/ButtonBackPage';
+import { useNavigation } from '@react-navigation/native';
+import { StackTypes } from '../../routes/Stack';
+import Header from '../../components/Header';
 
 
 
 const SingUp : React.FC = () => {
   const formRef: any = useRef(null);
+  const navigation = useNavigation<StackTypes>();
+
   function handleSubmit(data: RegisterUser) {
     console.log(data);
   }
 
   return (
     <Container>
+      <Header title="Cadastro de usuarios" />
       <Content>
-        <Title title='Cadastro de Usuario'/>
         <Form ref={formRef} onSubmit={handleSubmit}> 
           <Label>Nome:</Label>
           <Input name="Nome:" placeholder='Digite seu nome:'/>
@@ -32,7 +37,6 @@ const SingUp : React.FC = () => {
       <Button onPress={() => formRef.current?.submitForm()} title="Criar Usuario" />
         </Form>
       </Content>
-      <ButtonBackPage/>
     </Container>
   );
 }

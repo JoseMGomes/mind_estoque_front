@@ -4,7 +4,6 @@ import styles from "../../styles";
 export const Text = styled.Text`
   color: ${styles.colors.default_label};
 
-  margin-top: 30px;
   align-self: center;
   justify-content: center;
   align-items: center;

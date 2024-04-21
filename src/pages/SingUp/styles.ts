@@ -5,9 +5,10 @@ export const Container = styled.View`
   flex: 1;
   background-color: ${styles.colors.background};
   align-items: center;
-  justify-content: center;
+  padding-top: 50px;
 `;
 
 export const Content = styled.View`
-    width: 80%;
+    width: 90%;
+    margin-top: 50px;
 `;
