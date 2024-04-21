@@ -25,10 +25,10 @@ Este projeto faz parte de um estudo de caso realizado para a Mind Consulting. Tr
 
 ```bash
 # Clone o repositório
-git clone https://github.com/viniciusleal34/MindConsulting.git
+git clone https://github.com/JoseMGomes/mind_estoque_front.git
 
 # Navegue até o diretório do projeto
-cd MindConsulting
+cd mind_estoque_front
 
 # Instale as dependências usando Yarn
 yarn install
