@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "./styles";
+import { Container, ViewButton } from "./styles";
 import Card from "../../components/Card";
 import { ItemProps } from "../../types/ItemEstoque";
 import { FlatList } from "react-native";
@@ -42,17 +42,32 @@ interface ItemFlatList {
       value: "27",
       entrada: true
     },
+    {
+      name: "Chinelo",
+      quant: 54,
+      description: "Do numero 34 ao 43",
+      value: "27",
+      entrada: true
+    },
+    {
+      name: "Chinelo",
+      quant: 54,
+      description: "Do numero 34 ao 43",
+      value: "27",
+      entrada: true
+    },
   ];
   return (
     <Container>
       <Title title="Listagem de estoque" style={{marginBottom: 20}}/>
+     
       <FlatList
-        style={{ width: "90%", height: 500 }}
+        style={{ width: "90%", height: 500, marginTop: 50}}
         data={data}
         renderItem={(item: ItemFlatList) => <Card item={item.item} />}
         keyExtractor={(item: ItemProps) => item.name}
       />
-      <ButtonBackPage/>
+      <ButtonBackPage style={{marginTop: 50}}/>
     </Container>
   );
 };
