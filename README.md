@@ -5,17 +5,15 @@ Este projeto faz parte de um estudo de caso realizado para a Mind Consulting. Tr
 ## Funcionalidades
 
 - *Autenticação de Usuário*: Sistema seguro de login e registro para acesso autorizado.
-- *Dashboard*: Visão geral do status atual do estoque e métricas importantes.
-- *Gestão de Produtos*: Adicionar, editar e excluir produtos com informações detalhadas.
-- *Rastreamento de Estoque*: Atualizações em tempo real sobre os níveis de estoque e alertas para baixo estoque.
+- *Gestão de Produtos*: Adicionar, editar e excluir produtos com informações .
 - *Páginas Específicas*:
   - *Adicionar/Remover Item*: Página dedicada para adicionar e remover itens do estoque.
+  - *Adicionar Usuários*: Visualização dos itens disponíveis no estoque.
   - *Listar Itens*: Visualização dos itens disponíveis no estoque.
 
 ## Tecnologias Utilizadas
 
-- Frontend: JavaScript, React_Native.js
-- Backend: Node.js, MySQL
+- Frontend: JavaScript, TypeScript React_Native.js (Expo).
 
 # MindConsulting
 
