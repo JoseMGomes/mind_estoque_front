@@ -1,6 +1,6 @@
 # Aplicativo de Controle de Estoque
 
-Este projeto faz parte de um estudo de caso realizado para a Mind Consulting. Trata-se de um aplicativo de controle de estoque projetado para ajudar empresas a monitorarem seus níveis de estoque de forma eficiente.
+Este projeto faz parte de um processo seletivo realizado para a Mind Consulting. Trata-se de um aplicativo de controle de estoque projetado para ajudar empresas a monitorarem seus níveis de estoque de forma eficiente.
 
 ## Funcionalidades
 
@@ -8,7 +8,7 @@ Este projeto faz parte de um estudo de caso realizado para a Mind Consulting. Tr
 - *Gestão de Produtos*: Adicionar, editar e excluir produtos com informações .
 - *Páginas Específicas*:
   - *Adicionar/Remover Item*: Página dedicada para adicionar e remover itens do estoque.
-  - *Adicionar Usuários*: Visualização dos itens disponíveis no estoque.
+  - *Adicionar Usuários*: Página para a criação de novos usuários.
   - *Listar Itens*: Visualização dos itens disponíveis no estoque.
 
 ## Tecnologias Utilizadas

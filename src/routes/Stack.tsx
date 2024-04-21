@@ -9,29 +9,17 @@ import Login from "../pages/Login";
 import FormItem from "../pages/FormItem";
 import SingUp from "../pages/SingUp";
 import ListEstoque from "../pages/ListEstoque";
+import { ItemProps } from "../types/ItemEstoque";
 
 const Stack = createNativeStackNavigator();
 
 type StackNavigation = {
-  LogIn: {
-    email: string;
-    password: string;
-  };
+  LogIn: undefined;
   Home: undefined;
-  FormItem: undefined;
-  SingUp: {
-    name: string;
-    email: string;
-    password: string;
-  };
+  FormItem?: ItemProps;
+  SingUp: undefined;
 
-  ListEstoque: {
-    name: string;
-    description: string;
-    quant: number;
-    value: string;
-    entrada?: boolean;
-  };
+  ListEstoque: undefined;
 };
 export type StackTypes = NativeStackNavigationProp<StackNavigation>;
 
