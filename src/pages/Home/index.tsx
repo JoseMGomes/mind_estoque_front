@@ -7,7 +7,6 @@ import Title from '../../components/Title';
 import ButtonBackPage from '../../components/ButtonBackPage';
 import Header from '../../components/Header';
 
-// import { Container } from './styles';
 
 const Home: React.FC = () => {
 
