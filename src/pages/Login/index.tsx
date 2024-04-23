@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Form } from "@unform/mobile";
-import { Container, Content, Label, Image } from "./styles";
+import { Container, Content, Label } from "./styles";
 import Input from "../../components/Input";
 import { LoginUser } from "../../types/LoginUser";
 import Button from "../../components/Button";
@@ -16,16 +16,16 @@ const Login: React.FC = () => {
   const handleSubmit = async (data: LoginUser) => {
     try {
       const response = await postSignInUserAsync(data);
-      console.log(response)
+      console.log(response);
       if (typeof response == "boolean") {
         Alert.alert("Erro", "Verifique sua senha e email");
         return false;
-      } 
-      navigation.navigate('Home');
+      }
+      navigation.navigate("Home");
     } catch (err) {
       Alert.alert("Erro ao autenticas", "Verifique sua senha e email");
     }
-  }
+  };
 
   return (
     <Container>

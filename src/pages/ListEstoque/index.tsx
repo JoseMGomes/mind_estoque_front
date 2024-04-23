@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Container, ViewButton } from "./styles";
 import Card from "../../components/Card";
@@ -9,68 +9,53 @@ import ButtonBackPage from "../../components/ButtonBackPage";
 import { useNavigation } from "@react-navigation/native";
 import { StackTypes } from "../../routes/Stack";
 import Header from "../../components/Header";
-
+import { getAllItensAsync } from "../services/stockService";
 
 interface ItemFlatList {
   index: number;
   item: ItemProps;
 }
 
-
-
- export const ListEstoque: React.FC = () => {
-   const data: ItemProps[] = [
+export const ListEstoque: React.FC = () => {
+  const [data, setData] = useState<ItemProps[]>([]);
+  const navigation = useNavigation<StackTypes>();
+  const teste = [
     {
-      name: "Shorts",
-      quant: 25,
-      description: "Serve para fazer comida",
-      value: "90",
-    },
-    {
-      name: "Camisa",
-      quant: 84,
-      description: "Camisa masculina",
-      value: "80",
-    },
-    {
-      name: "Calca",
-      quant: 12,
-      description: "Calca pequena a grande",
-      value: "120",
-    },
-    {
-      name: "Chinelo",
-      quant: 54,
-      description: "Do numero 34 ao 43",
-      value: "27",
-      entrada: true
-    },
-    {
-      name: "Chinelo",
-      quant: 54,
-      description: "Do numero 34 ao 43",
-      value: "27",
-      entrada: true
-    },
-    {
-      name: "Chinelo",
-      quant: 54,
-      description: "Do numero 34 ao 43",
-      value: "27",
-      entrada: true
+      createdAt: "2024-04-22T18:46:40.000Z",
+      description: "teste@teste.com",
+      id: 1,
+      image_path: null,
+      is_active: true,
+      is_stock_entry: true,
+      name: "teste",
+      quant: 1,
+      updatedAt: "2024-04-22T18:46:40.000Z",
+      value: "3",
     },
   ];
+  const getAllStock = async () => {
+    try {
+      const response = await getAllItensAsync();
+      if (response) {
+        setData(response);
+      }
+    } catch (err) {
+      return false;
+    }
+  };
 
-  const navigation = useNavigation<StackTypes>();
+  useEffect(() => {
+    getAllStock();
+  }, []);
 
   return (
     <Container>
       <Header title="Listagem de estoque" />
       <FlatList
-        style={{ width: "90%", height: 500, marginTop: 50}}
+        style={{ width: "90%", height: 500, marginTop: 50 }}
         data={data}
         renderItem={(item: ItemFlatList) => <Card item={item.item} />}
-        keyExtractor={(item: ItemProps) => item.name}
+        keyExtractor={(item: ItemProps) => item.id}
       />
     </Container>
   );
