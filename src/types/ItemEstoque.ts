@@ -1,7 +1,10 @@
 export interface ItemProps {
-    name: string;
-    description: string;
-    quant: number;
-    value: string;
-    entrada?:boolean;
-  }
+  id:string;
+  name: string;
+  image_path: string;
+  description: string;
+  is_active: boolean;
+  is_stock_entry: boolean;
+  quant: number;
+  value: number;
+}
