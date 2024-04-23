@@ -89,8 +89,8 @@ export async function postCreateImageAsync(bodyImage: any, stockId: string) {
     });
     return data;
   } catch (err: any) {
-    console.log(err.response);
-    Alert.alert("Ops aconteceu um erro", JSON.stringify(err.response));
+    console.log(err.response.data);
+    Alert.alert("Ops aconteceu um erro", JSON.stringify(err.response.data));
     return false;
   }
 }

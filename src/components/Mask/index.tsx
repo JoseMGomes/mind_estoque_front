@@ -6,11 +6,16 @@ import Input from "../Input";
 interface InputMask extends TextInputMaskProps {
   name?: string;
   label?: string;
+  initial?: string;
+  rawText: string;
+  setRawText: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const InputMask: React.FC<InputMask> = ({ type, ...rest }, inputRef) => {
-  const [text, setText] = useState("");
-  const [rawText, setRawText] = useState("");
+const InputMask: React.FC<InputMask> = (
+  { type, initial,setRawText, rawText, ...rest },
+  inputRef
+) => {
+  const [text, setText] = useState(initial || "");
 
   const handleChangeText = useCallback(
     (maskedText: string, unmaskedText: any) => {

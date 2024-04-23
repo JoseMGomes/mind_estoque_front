@@ -19,7 +19,7 @@ type StackNavigation = {
   FormItem?: ItemProps;
   SingUp: undefined;
 
-  ListEstoque: undefined;
+  ListEstoque?: ItemProps;
 };
 export type StackTypes = NativeStackNavigationProp<StackNavigation>;
 

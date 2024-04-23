@@ -1,3 +1,3 @@
 export default {
-    URL: "http://localhost:3333"
-  };
+  URL: "http://192.168.2.115:3333"
+};
